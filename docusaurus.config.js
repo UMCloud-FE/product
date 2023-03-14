@@ -120,6 +120,7 @@ const config = {
       },
     }),
     clientModules: [require.resolve('./src/clientModules/routeModules.js')],
+    onBrokenLinks: 'ignore',
     stylesheets: [
       {
         href: '/custom.css',
