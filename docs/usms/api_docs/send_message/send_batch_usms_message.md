@@ -1,0 +1,129 @@
+# 批量发送短信-SendBatchUSMSMessage
+
+> 支持在一次请求中向多个不同的手机号码发送不同内容的短信；在一次批量请求中，最多支持 200 个号码；更多接口说明，详见 [短信服务 API 概览](/usms/api_docs/9001)
+
+# Request Parameters
+
+| Parameter name | Type   | Description                                                                                                                                                                                                                                                                                                                             | Required | Remark   |
+| -------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
+| Action         | String | 对应的 API 名称，SendBatchUSMSMessage                                                                                                                                                                                                                                                                                                   | Yes      | 公共参数 |
+| PublicKey      | String | 对应的 API 公钥                                                                                                                                                                                                                                                                                                                         | Yes      | 公共参数 |
+| Signature      | String | 根据 API 公私钥及 API 指令生成的用户签名，参见 [签名算法](https://docs.ucloud.cn/api/summary/signature)                                                                                                                                                                                                                                 | Yes      | 公共参数 |
+| ProjectId      | string | 服务账号 ID，主账号与财务账号为空时为 默认服务账号；子账号为必填字段，参见 [获取 服务账号 ID](https://docs.ucloud.cn/api/summary/get_project_list)                                                                                                                                                                                      | Yes      | 公共参数 |
+| TaskContent    | string | 批量发送参数，base64 编码后的 json 数组，编码前后的 json 数组参考下述示例：<br /> [Base64 编码前的 TaskContent 示例](/usms/api_docs/send_message/send_batch_usms_message?id=taskcontent示例（base64编码前）)、 [Base64 编码后的 TaskContent 示例](/usms/api_docs/send_message/send_batch_usms_message?id=taskcontent示例（base64编码后）) | Yes      |          |
+
+- TaskContent（Base64 编码前）
+
+| Parameter name | Type   | Description            | Case            | Required |
+| -------------- | ------ | ---------------------- | --------------- | -------- |
+| TemplateId     | string | 短信模板 ID            | UTB20092XXXXD02 | Yes      |
+| SigContent     | string | 短信签名               | UMCloud         | Yes      |
+| Target         | Array  | 号码及短信内容组合列表 |                 | Yes      |
+
+- Target（Base64 编码前）
+
+| Parameter name | Type   | Description                                                                                                                                                         | Case                | Required |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
+| TemplateParams | Array  | 短信模板中的变量（数组格式）                                                                                                                                        | ["UMCloud","13455"] | Yes      |
+| Phone          | string | 手机号码，手机号码格式为(60)1xxxxxxxx，()中为国际长途区号(如中国为 86 或 0086，两种格式都支持)，后面为电话号码.若不传入国际区号，如 185XXXX0507，则默认为国内手机号 | 185XXXX0507         | Yes      |
+| UserId         | string | 自定义的业务标识 ID，字符串（ 长度不能超过 32 位），不支持 单引号、表情包符号等特殊字符                                                                             | umcloud-uhost-001   | No       |
+| ExtendCode     | string | 短信扩展码，格式为阿拉伯数字串，默认不开通，如需开通请联系 UMCloud 技术支持                                                                                         | 123                 | No       |
+
+#### TaskContent 示例（Base64 编码前）
+
+```json
+[
+  {
+    "TemplateId": "UTA20212831C85C",
+    "SigContent": "UMCloud",
+    "Target": [
+      {
+        "TemplateParams": ["顶级钻石用户刘大锤", "24680"],
+        "Phone": "185XXXX0507",
+        "UserId": "you man c define the content by yrself"
+      },
+      {
+        "TemplateParams": ["开心果挖土机", "13579"],
+        "Phone": "185XXXX0608",
+        "ExtendCode": "123",
+        "UserId": "catch the big fish"
+      }
+    ]
+  }
+]
+```
+
+#### TaskContent 示例（Base64 编码后）
+
+```json
+WwogICAgewogICAgICAgICJUZW1wbGF0ZUlkIjoiVVRBMjAyMTI4MzFDODVDIiwKICAgICAgICAiU2lnQ29udGVudCI6IlVDbG91ZCIsCiAgICAgICAgIlRhcmdldCI6WwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiVGVtcGxhdGVQYXJhbXMiOlsKICAgICAgICAgICAgICAgICAgICAi6aG257qn6ZK755+z55So5oi35YiY5aSn6ZSkIiwKICAgICAgICAgICAgICAgICAgICAiMjQ2ODAiCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgIlBob25lIjoiMTg1WFhYWDA1MDciLAogICAgICAgICAgICAgICAgIlVzZXJJZCI6InlvdSBtYW4gYyBkZWZpbmUgdGhlIGNvbnRlbnQgYnkgeXJzZWxmIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiVGVtcGxhdGVQYXJhbXMiOlsKICAgICAgICAgICAgICAgICAgICAi5byA5b+D5p6c5oyW5Zyf5py6IiwKICAgICAgICAgICAgICAgICAgICAiMTM1NzkiCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgIlBob25lIjoiMTg1WFhYWDA2MDgiLAogICAgICAgICAgICAgICAgIkV4dGVuZENvZGUiOiIxMjMiLAogICAgICAgICAgICAgICAgIlVzZXJJZCI6ImNhdGNoIHRoZSBiaWcgZmlzaCIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0KXQ==
+```
+
+# Response Elements
+
+| Parameter name | Type   | Description                                                                                            | Required |
+| -------------- | ------ | ------------------------------------------------------------------------------------------------------ | -------- |
+| RetCode        | int    | 返回状态码，为 0 则为成功返回，非 0 为失败                                                             | **Yes**  |
+| Action         | string | 操作指令名称                                                                                           | **Yes**  |
+| Message        | string | 返回错误消息，当 `RetCode` 非 0 时提供详细的描述信息                                                   | **Yes**  |
+| SessionNo      | string | 本次提交发送任务的唯一 ID，可根据该值查询本次发送的短信列表。注：成功提交短信数大于 0 时，才返回该字段 | No       |
+| ReqUuid        | string | 本次请求 Uuid                                                                                          | No       |
+| SuccessCount   | int    | 成功提交短信（未拆分）条数                                                                             | No       |
+| FailContent    | array  | 未发送成功的详情，返回码非 0 时该字段有效，可根据该字段数据重发                                        | No       |
+
+## BatchInfo
+
+| Parameter name | Type   | Description                                             | Required |
+| -------------- | ------ | ------------------------------------------------------- | -------- |
+| TemplateId     | string | 短信模板 ID                                             | **Yes**  |
+| SigContent     | string | 短信签名                                                | **Yes**  |
+| Target         | array  | 具体手机号码、模板变量等信息组合                        | **Yes**  |
+| FailureDetails | string | 未能成功发送的详情。注：模板/签名检验失败时，该字段有效 | No       |
+
+## FailPhoneDetail
+
+| Parameter name | Type   | Description                                       | Required |
+| -------------- | ------ | ------------------------------------------------- | -------- |
+| TemplateParams | array  | 短信模板参数                                      | **Yes**  |
+| Phone          | string | 手机号                                            | **Yes**  |
+| ExtendCode     | string | 扩展号码                                          | No       |
+| UserId         | string | 用户自定义 ID                                     | No       |
+| FailureDetails | string | 发送失败原因。注：若模板/签名校验失败，该字段为空 | No       |
+
+# Request Example
+
+```http
+https://api.ucloud.cn/?Action=SendBatchUSMSMessage
+&PublicKey=vsRhB0Qzo9elXXXXXkw8o/vmss8Tb0vxi74A=
+&Signature=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+&ProjectId=org1234
+&TaskContent=WwogICAgewogICAgICAgICJUZW1wbGF0ZUlkIjoiVVRBMjAyMTI4MzFDODVDIiwKICAgICAgICAiU2lnQ29udGVudCI6IlVDbG91ZCIsCiAgICAgICAgIlRhcmdldCI6WwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiVGVtcGxhdGVQYXJhbXMiOlsKICAgICAgICAgICAgICAgICAgICAi6aG257qn6ZK755+z55So5oi35YiY5aSn6ZSkIiwKICAgICAgICAgICAgICAgICAgICAiMjQ2ODAiCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgIlBob25lIjoiMTg1WFhYWDA1MDciLAogICAgICAgICAgICAgICAgIlVzZXJJZCI6InlvdSBtYW4gYyBkZWZpbmUgdGhlIGNvbnRlbnQgYnkgeXJzZWxmIgogICAgICAgICAgICB9LAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiVGVtcGxhdGVQYXJhbXMiOlsKICAgICAgICAgICAgICAgICAgICAi5byA5b+D5p6c5oyW5Zyf5py6IiwKICAgICAgICAgICAgICAgICAgICAiMTM1NzkiCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgIlBob25lIjoiMTg1WFhYWDA2MDgiLAogICAgICAgICAgICAgICAgIkV4dGVuZENvZGUiOiIxMjMiLAogICAgICAgICAgICAgICAgIlVzZXJJZCI6ImNhdGNoIHRoZSBiaWcgZmlzaCIKICAgICAgICAgICAgfQogICAgICAgIF0KICAgIH0KXQ==
+```
+
+# Response Example
+
+```json
+{
+  "RetCode": 0,
+  "Action": "SendBatchUSMSMessageResponse",
+  "Message": "submit success",
+  "SessionNo": "abcd-dadd-dafs-dadfa-dafdsa",
+  "ReqUuid": "abcd-dadd-dafs-dadfa-dafdsa",
+  "SuccessCount": 2,
+  "FailContent": [
+    {
+      "TemplateId": "UTA20212831C85C",
+      "SigContent": "UMCloud",
+      "Target": [
+        {
+          "TemplateParams": ["开心果挖土机", "13579"],
+          "Phone": "185XXXX0608",
+          "ExtendCode": "123",
+          "UserId": "catch the big fish"
+        }
+      ],
+      "FailureDetails": "phone in the black list"
+    }
+  ]
+}
+```

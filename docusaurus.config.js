@@ -6,44 +6,26 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'uSpeedo',
-  tagline: 'Check out our API reference documentation and quickstarts. From using the SDK to sample apps for Web, iOS, and Android, you\'ll get what you need.',
-  favicon: 'img/favicon.ico',
-  // Set the production url of your site here
-  url: 'https://docs.uspeedo.com/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  title: '优铭云 - 产品文档中心',
+  // tagline: 'dd',
+  favicon: 'https://umweb-static.cn-sh2.ufileos.com/docs/images/favicon.ico',
+  url: 'https://docs.umpaas.com',
+  baseUrl: '/product/',
   staticDirectories: ['static'],
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'uSpeedo', // Usually your GitHub org/user name.
+  organizationName: 'UMCloud', // Usually your GitHub org/user name.
   projectName: 'product', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en','zh-Hans']
-  },
-
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          // routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/uSpeedo/product/blob/main/docs',
+            'https://github.com/UMCloud-FE/product/blob/main/docs',
         },
         blog: false,
         theme: {
@@ -57,34 +39,33 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/logo.png',
+      // image: 'https://umweb-static.cn-sh2.ufileos.com/web/images/logo-reverse.png?auto=format&fit=max&w=256',
       navbar: {
-        title: 'uSpeedo Docs',
+        title: '',
         logo: {
-          alt: 'uSpeedo',
-          src: 'img/logo.png',
+          alt: 'UMCloud',
+          src: 'https://umweb-static.cn-sh2.ufileos.com/web/images/logo-reverse.png?auto=format&fit=max&w=256',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'sms',
-            position: 'left',
-            label: 'SMS',
-          },
           { 
             type: 'docSidebar', 
-            sidebarId: 'sdk',
+            sidebarId: 'usms',
             position: 'left',
-            label: 'SDK',
+            label: '短信服务',
           },
-          { 
-            type: 'docSidebar', 
-            sidebarId: 'api',
-            position: 'left',
-            label: 'API',
+          // { 
+          //   type: 'docSidebar', 
+          //   sidebarId: 'asms',
+          //   position: 'left',
+          //   label: '国际短信',
+          // },
+          {
+            href: 'https://console.umpaas.com/',
+            label: '回到官网',
+            position: 'right',
           },
           {
-            href: 'https://github.com/uSpeedo/product',
+            href: 'https://github.com/UMCloud-FE/product',
             label: 'GitHub',
             position: 'right',
           },
@@ -124,22 +105,27 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © All Rights Reserved 上海优铭云计算有限公司 | 沪ICP备2022034633号-1`,
       },
       prism: {
         theme: lightCodeTheme,
-        // theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
       },
       giscus: {
-        repo: 'uSpeedo/product',
-        repoId: 'R_kgDOJEVgeQ',
+        repo: 'UMCloud-FE/product',
+        repoId: 'R_kgDOJJSraw',
         category: 'Announcements',
-        categoryId: 'DIC_kwDOJEVgec4CUsqV',
-        dataLang: "en"
+        categoryId: 'DIC_kwDOJJSra84CU3Cd',
+        lang: "zh-CN"
       },
     }),
-    clientModules: [require.resolve('./src/clientModules/routeModules.js')]
+    clientModules: [require.resolve('./src/clientModules/routeModules.js')],
+    stylesheets: [
+      {
+        href: '/custom.css',
+        type: 'text/css'
+      }
+    ]
 };
 
 module.exports = config;
