@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageMain from '@site/src/components/HomepageMain';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Translate from '@docusaurus/Translate';
 
 import styles from './index.module.css';
@@ -37,7 +38,8 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="UMCloud document">
       <HomepageHeader />
-      {/* <HomepageMain /> */}
+      <HomepageMain />
+      <HomepageFeatures />
     </Layout>
   );
 }

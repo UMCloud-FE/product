@@ -60,6 +60,12 @@ const sidebars = {
     //   }]
     // }
   ],
+  isms: [
+    "isms/index"
+  ],
+  uaim: [
+    "uaim/index"
+  ]
   // sdk: [
   //   {
   //     type: 'category',

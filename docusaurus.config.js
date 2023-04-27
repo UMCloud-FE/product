@@ -14,9 +14,12 @@ const config = {
   staticDirectories: ['static'],
   organizationName: 'UMCloud', // Usually your GitHub org/user name.
   projectName: 'product', // Usually your repo name.
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  i18n: {
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans']
+  },
   presets: [
     [
       'classic',
@@ -53,12 +56,18 @@ const config = {
             position: 'left',
             label: '短信服务',
           },
-          // { 
-          //   type: 'docSidebar', 
-          //   sidebarId: 'asms',
-          //   position: 'left',
-          //   label: '国际短信',
-          // },
+          { 
+            type: 'docSidebar', 
+            sidebarId: 'isms',
+            position: 'left',
+            label: '视频短信',
+          },
+          { 
+            type: 'docSidebar', 
+            sidebarId: 'uaim',
+            position: 'left',
+            label: '智能短信',
+          },
           {
             href: 'https://console.umpaas.com/',
             label: '回到官网',
