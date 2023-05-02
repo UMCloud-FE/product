@@ -28,7 +28,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/UMCloud-FE/product/blob/main/docs',
+            'https://github.com/UMCloud-FE/product/blob/main',
         },
         blog: false,
         theme: {
@@ -50,20 +50,20 @@ const config = {
           src: 'https://umweb-static.cn-sh2.ufileos.com/web/images/logo-reverse.png?auto=format&fit=max&w=256',
         },
         items: [
-          { 
-            type: 'docSidebar', 
+          {
+            type: 'docSidebar',
             sidebarId: 'usms',
             position: 'left',
             label: '短信服务',
           },
-          { 
-            type: 'docSidebar', 
+          {
+            type: 'docSidebar',
             sidebarId: 'isms',
             position: 'left',
             label: '视频短信',
           },
-          { 
-            type: 'docSidebar', 
+          {
+            type: 'docSidebar',
             sidebarId: 'uaim',
             position: 'left',
             label: '智能短信',
@@ -127,15 +127,16 @@ const config = {
         categoryId: 'DIC_kwDOJJSra84CU3Cd',
         lang: "zh-CN"
       },
+      metadata: [{name: 'keywords', content: 'UMCloud, 优铭云, 云通信'}],
     }),
-    clientModules: [require.resolve('./src/clientModules/routeModules.js')],
-    onBrokenLinks: 'ignore',
-    stylesheets: [
-      {
-        href: '/custom.css',
-        type: 'text/css'
-      }
-    ]
+  clientModules: [require.resolve('./src/clientModules/routeModules.js')],
+  onBrokenLinks: 'ignore',
+  stylesheets: [
+    {
+      href: '/custom.css',
+      type: 'text/css'
+    }
+  ]
 };
 
 module.exports = config;
