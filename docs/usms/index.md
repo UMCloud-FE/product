@@ -21,22 +21,24 @@
 
   - [快速入门](/docs/usms/guide/5001)
   - 国内短信
-    - [短信套餐包](/docs/usms/guide/5003/301)
-    - [短信签名](/docs/usms/guide/5003/303)
-    - [短信模板](/docs/usms/guide/5003/305)
-    - [发送记录](/docs/usms/guide/5003/307)
-    - [短信发送](/docs/usms/guide/5003/309)
-    - [web 群发功能](/docs/usms/guide/5003/311)
-    - [发送数据统计](/docs/usms/guide/5003/313)
-    - [发送失败分析](/docs/usms/guide/5003/315)
-    - SDK 文档
+    - [短信套餐包](/docs/usms/usage/301)
+    - [短信签名](/docs/usms/usage/303)
+    - [短信模板](/docs/usms/usage/305)
+    - [发送详情](/docs/usms/usage/307)
+    - [短信发送方式](/docs/usms/usage/309)
+    - [控制台短信发送](/docs/usms/usage/311)
+    - [发送数据统计](/docs/usms/usage/313)
+    - [发送失败分析](/docs/usms/usage/315)
+
+<!-- 
+  - SDK 文档
   - [短信服务 SDK 概览](/docs/usms/sdk_docs/7001)
   - [Python SDK](/docs/usms/sdk_docs/7003)
   - [PHP SDK](/docs/usms/sdk_docs/7005)
   - [Go SDK](/docs/usms/sdk_docs/7007)
   - [Java SDK](/docs/usms/sdk_docs/7009)
-  - API 文档
-
+  - API 文档 -->
+<!-- 
 
   - [短信服务 API 概览](/docs/usms/api_docs/9001)
   - 调用方式
@@ -49,7 +51,7 @@
     - [上行消息推送](/docs/usms/api_docs/ret_message#上行消息推送)
   - 错误码
     - [API 错误码](/docs/usms/api_docs/error_code/error_code)
-    - [短信状态回执错误码](/docs/usms/api_docs/error_code/receipt_code)
+    - [短信状态回执错误码](/docs/usms/api_docs/error_code/receipt_code) -->
 
 - ## 常见问题
-  - [短信发送问题](/docs/usms/faq/1109)
+  - [短信发送问题](/docs/usms/faq_simple/1109)

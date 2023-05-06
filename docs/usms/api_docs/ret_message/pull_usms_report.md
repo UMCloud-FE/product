@@ -32,7 +32,7 @@
 
 | Parameter name | Type   | Description                                                                                                                                                                               |
 | -------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SessionNo      | string | [短信发送](https://docs.ucloud.cn/api/usms-api/send_usms_message) 的发送序列号                                                                                                            |
+| SessionNo      | string | [短信发送](docs.ucloud.cn/api/usms-api/send_usms_message) 的发送序列号                                                                                                            |
 | Phone          | string | 手机号码                                                                                                                                                                                  |
 | CostCount      | int    | 短信拆分条数                                                                                                                                                                              |
 | ReceiptTime    | int    | 状态报告时间                                                                                                                                                                              |

@@ -58,7 +58,7 @@
 
 | Parameter name | Type   | Description                                                                                                                                                                               | Case              | Required |
 | -------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | -------- |
-| SessionNo      | string | [短信发送](https://docs.UMCloud.cn/api/usms-api/send_usms_message) 的发送序列号                                                                                                           | xddd-xx-ss-ss-ss  | Y        |
+| SessionNo      | string | [短信发送](docs.UMCloud.cn/api/usms-api/send_usms_message) 的发送序列号                                                                                                           | xddd-xx-ss-ss-ss  | Y        |
 | Phone          | string | 手机号码                                                                                                                                                                                  | 18512345678       | Y        |
 | CostCount      | int    | 短信拆分条数                                                                                                                                                                              | 2                 | Y        |
 | ReceiptTime    | int    | 状态报告时间                                                                                                                                                                              | 1563867000        | Y        |

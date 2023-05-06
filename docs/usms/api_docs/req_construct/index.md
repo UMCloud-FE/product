@@ -35,5 +35,5 @@ UMCloud 云计算产品的所有 API 都支持通过 HTTP/HTTPS 进行通信，�
 | :-------- | :---- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Action    | true  | String   | 对应的 API 名称，如 SendUSMSMessage                                                                                                                |
 | PublicKey | true  | String   | 对应的 API 公钥                                                                                                                                    |
-| Signature | true  | String   | 根据 API 公私钥及 API 指令生成的用户签名，参见 [签名算法](https://docs.UMCloud.cn/api/summary/signature)                                           |
-| ProjectId | false | String   | 服务账号 ID，主账号与财务账号为空时为默认服务账号；子账号为必填字段，参见 [获取 服务账号 ID](https://docs.UMCloud.cn/api/summary/get_project_list) |
+| Signature | true  | String   | 根据 API 公私钥及 API 指令生成的用户签名，参见 [签名算法](docs.UMCloud.cn/api/summary/signature)                                           |
+| ProjectId | false | String   | 服务账号 ID，主账号与财务账号为空时为默认服务账号；子账号为必填字段，参见 [获取 服务账号 ID](docs.UMCloud.cn/api/summary/get_project_list) |

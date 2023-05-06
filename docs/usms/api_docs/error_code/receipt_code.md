@@ -2622,7 +2622,7 @@
 
 ## 2.状态报告查询方式
 
-- **主动调 API 拉取**：可通过调用 [获取短信发送回执状态码接口](https://docs.ucloud.cn/api/usms-api/get_usms_send_receipt) 获取；
+- **主动调 API 拉取**：可通过调用 [获取短信发送回执状态码接口](docs.ucloud.cn/api/usms-api/get_usms_send_receipt) 获取；
 
 - **批量回调接收**：可登录控制台，基础配置中进行短信状态报告接收配置；
 

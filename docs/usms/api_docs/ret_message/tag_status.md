@@ -6,8 +6,8 @@
 
 您可以选择以下方式中的任意一种，发起 API 请求：
 
-- 多语言 OpenSDK / [Python](https://github.com/ucloud/ucloud-sdk-python3) / [Java](https://github.com/ucloud/ucloud-sdk-java) /
-- [UAPI 浏览器](https://console.ucloud.cn/uapi/detail?id=SendUSMSMessage)
+- 多语言 OpenSDK / [Python](github.com/ucloud/ucloud-sdk-python3) / [Java](github.com/ucloud/ucloud-sdk-java) /
+- [UAPI 浏览器](console.ucloud.cn/uapi/detail?id=SendUSMSMessage)
 - [CloudShell 云命令行](https://shell.ucloud.cn/)
 
 ## 定义
@@ -17,8 +17,8 @@
 | 参数名        | 类型   | 描述信息                                                                                         | 必填    |
 | ------------- | ------ | ------------------------------------------------------------------------------------------------ | ------- |
 | **Action**    | string | 对应的 API 指令名称，当前 API 为 `SendUSMSMessage`                                               | **Yes** |
-| **PublicKey** | string | 用户公钥，可从 [控制台](https://console.ucloud.cn/uapi/apikey) 获取                              | **Yes** |
-| **Signature** | string | 根据公钥及 API 指令生成的用户签名，参见 [签名算法](https://docs.ucloud.cn/api/summary/signature) | **Yes** |
+| **PublicKey** | string | 用户公钥，可从 [控制台](console.ucloud.cn/uapi/apikey) 获取                              | **Yes** |
+| **Signature** | string | 根据公钥及 API 指令生成的用户签名，参见 [签名算法](docs.ucloud.cn/api/summary/signature) | **Yes** |
 
 ### 参数说明
 
