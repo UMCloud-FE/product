@@ -88,28 +88,24 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Community',
+            title: '云通信团队',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: '优铭云主页',
+                href: 'https://umpaas.com/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: '控制台',
+                href: 'https://console.umpaas.com/',
               },
             ],
           },
           {
-            title: 'More',
+            title: '更多',
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/UMCloud-FE/product',
               },
             ],
           },

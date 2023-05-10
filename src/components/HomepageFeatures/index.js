@@ -4,45 +4,47 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '智能短信',
+    url: '/product/docs/uaim/introduction/index',
+    Svg: 'https://umweb-static.cn-sh2.ufileos.com/docs/icons/UAIM.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        将传统文本短信无缝升级为可交互的富媒体信息。帮助您实现与用户应用交互、内容访问、信息查询、智能客服等实时互动。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '视频短信',
+    url: '/product/docs/isms/',
+    Svg: 'https://umweb-static.cn-sh2.ufileos.com/docs/icons/ISMS.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        支持文字、图片、视频及音频等多种丰富的内容组合发送，通过多元化的内容互动组合方式，更丰富、更直观的维度呈现给用户群体。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '文本短信',
+    url: '/product/docs/usms/',
+    Svg: 'https://umweb-static.cn-sh2.ufileos.com/docs/icons/USMS.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        文本短信服务（USMS）是UMCloud为用户提供的一种云通信服务，帮助广大开发者便捷、灵活接入高质量的短信服务。
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description, url }) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        {/* <Svg className={styles.featureSvg} role="img" /> */}
+      <div className="text--center" style={{ cursor: 'pointer' }} onClick={() => {
+        window.location.href = url;
+      }}>
+        <img width={50} height={50} src={Svg} alt='product' style={{ marginBottom: '16px' }} />
+        <h3>{title}</h3>
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
