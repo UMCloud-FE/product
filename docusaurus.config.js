@@ -132,7 +132,21 @@ const config = {
       href: '/custom.css',
       type: 'text/css'
     }
-  ]
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // 重定向规则列表
+        redirects: [
+          {
+            from: '/docs',
+            to: '/',
+          },
+        ],
+      },
+    ],
+  ],
 };
 
 module.exports = config;

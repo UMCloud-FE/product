@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.3.1",
+    "@docusaurus/plugin-client-redirects": "2.3.1",
     "@docusaurus/plugin-content-pages": "^2.3.1"
   },
   "browserslist": {
