@@ -15,8 +15,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build website
-        run: yarn build
-        run: echo ${{ secrets.ACCOUNT }}
+        run: yarn build && echo ${{ secrets.ACCOUNT }}
       
       - name: Login to UHub
         uses: docker/login-action@v2
