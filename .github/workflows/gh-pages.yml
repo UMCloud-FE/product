@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # default branch
+      - pre
 
 jobs:
   deploy:
