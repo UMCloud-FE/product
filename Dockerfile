@@ -4,8 +4,8 @@ WORKDIR /data
 
 RUN ls -al
 
-ADD dist /data/dist
+ADD build /data/dist
 
-COPY  ./script/prod/default.conf /etc/nginx/conf.d/default.conf
+COPY  ./default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
