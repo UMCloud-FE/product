@@ -34,4 +34,4 @@ jobs:
           context: ./
           platforms: linux/amd64
           push: true
-          tags: um-docs/um-product-docs:latest
+          tags: uhub.service.ucloud.cn/um-docs/um-product-docs:latest
