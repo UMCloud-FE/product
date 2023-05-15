@@ -21,8 +21,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: uhub.service.ucloud.cn
-          Username: ${{ secrets.ACCOUNT }}
-          Password: ${{ secrets.UM_PASSWORD }}
+          username: ${{ secrets.ACCOUNT }}
+          password: ${{ secrets.UM_PASSWORD }}
 
         # run: |
         #  docker login uhub.service.ucloud.cn -u ${{ secrets.ACCOUNT }} -p ${{ secrets.UM_PASSWORD }}
