@@ -21,7 +21,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: uhub.service.ucloud.cn
-          username: ${{ secrets.ACCOUNT }}
+          Username: ${{ secrets.ACCOUNT }}
           password: ${{ secrets.UM_PASSWORD }}
       
       - name: Push docker image
