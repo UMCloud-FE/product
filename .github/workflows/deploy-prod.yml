@@ -18,8 +18,14 @@ jobs:
         run: yarn build
       
       - name: Login to UHub
-        run: |
-          docker login uhub.service.ucloud.cn -u ${{ secrets.ACCOUNT }} -p ${{ secrets.UM_PASSWORD }}
+        uses: docker/login-action@v2
+        with:
+          registry: uhub.service.ucloud.cn
+          Username: ${{ secrets.ACCOUNT }}
+          Password: ${{ secrets.UM_PASSWORD }}
+
+        # run: |
+        #  docker login uhub.service.ucloud.cn -u ${{ secrets.ACCOUNT }} -p ${{ secrets.UM_PASSWORD }}
       
       - name: Push docker image
         uses: docker/build-push-action@v2
