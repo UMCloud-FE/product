@@ -23,9 +23,6 @@ jobs:
           registry: hub.ucloudadmin.com
           username: ${{ secrets.ACCOUNT }}
           password: ${{ secrets.UM_PASSWORD }}
-
-        # run: |
-        #  docker login uhub.service.ucloud.cn -u ${{ secrets.ACCOUNT }} -p ${{ secrets.UM_PASSWORD }}
       
       - name: Push docker image
         uses: docker/build-push-action@v4
