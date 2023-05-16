@@ -15,14 +15,14 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build website
-        run: echo ${{ secrets.DOCKER_USERNAME }} && yarn build
+        run: yarn build
       
       - name: Login to UHub
         uses: docker/login-action@v2
         with:
-          registry: uhub.service.ucloud.cn
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: hub.ucloudadmin.com
+          username: ${{ secrets.ACCOUNT }}
+          password: ${{ secrets.UM_PASSWORD }}
 
         # run: |
         #  docker login uhub.service.ucloud.cn -u ${{ secrets.ACCOUNT }} -p ${{ secrets.UM_PASSWORD }}
@@ -33,4 +33,4 @@ jobs:
           context: ./
           platforms: linux/amd64
           push: true
-          tags: uhub.service.ucloud.cn/um-docs/um-product-docs:latest
+          tags: hub.ucloudadmin.com/um-docs/um-product-docs:latest
